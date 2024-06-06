@@ -10,16 +10,16 @@
     <link rel="icon" type="image/x-icon" href="../image/1-removebg-preview.png">
     <style>
         body {
-            background-color: #8BD9CA;
+            background-color: #FAEED1;
             overflow: hidden;
         }
 
         .content-container {
             display: flex;
             justify-content: left;
-            align-items: center; /* Center items vertically */
+            align-items: center; 
             gap: 20px;
-            height: calc(100vh - 80px); /* Adjust height to account for the navbar */
+            height: calc(100vh - 80px); 
         }
 
         .text-container {
@@ -30,56 +30,64 @@
         }
 
         .navbar {
-            background-color: #008081;
+            background-color: #B99470;
             font-size: large;
             font-weight: 400;
-            padding: 0.5rem 1rem; /* Adjust padding to reduce height */
+            padding: 0.05rem 0.2rem; /* Adjust padding to reduce height */
         }
-
         .navbar .nav-item {
             padding-left: 1rem;
         }
-
         .navbar .nav-item a {
+            height: auto;
             color: black; /* Change text color to black */
             text-decoration: none; /* Remove underline */
         }
-
         .navbar .nav-item a:hover {
             color: black; /* Ensure text color remains black on hover */
         }
-
         .nav-item .active {
             font-weight: 500;
         }
-
         .dropdown-toggle::after {
             display: none; /* Hide default caret icon */
             content: none; /* Ensure no content is added */
         }
-
         .dropdown-menu {
             right: 0;
             left: auto;
         }
-
         .navbar-brand {
             display: flex;
             align-items: center;
         }
-
         .navbar-brand h2 {
             color: black;
             font-size: 1.5rem; /* Adjust font size as necessary */
         }
-
         .navbar-brand img {
             height: 70px; /* Adjust the height of the logo */
-            margin-right: 10px;
+            margin-right: 5px;
         }
-
         .dropdown-item:hover {
             background-color: #008081; /* Change hover background color */
+        }
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                width: 100%;
+                transition-timing-function: ease-out;
+            }
+            .nav-item .btn {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            #input-search {
+                width: 12em;
+            }
+            #banner img {
+                height: 200px;
+                width: min-content;
+            }
         }
 
         .container1 {
@@ -95,98 +103,101 @@
         }
 
         .search-container {
-    max-width: 400px;
-    width: 100%;
-    margin: 20px auto; /* Center the search box horizontally and add margin for spacing */
-    padding: 15px;
-    background-color: #008081;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+            max-width: 400px;
+            width: 100%;
+            margin: 20px auto; 
+            padding: 15px;
+            background-color: #B99470;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-.search-box {
-    display: flex;
-    align-items: center;
-}
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
 
-input[type="text"] {
-    width: calc(100% - 40px); /* Width minus button width and padding */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
-}
+        input[type="text"] {
+            width: calc(100% - 40px); 
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
 
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 0 4px 4px 0;
-    font-size: 16px;
-}
+        button[type="submit"] {
+            background-color: #B99470;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+            font-size: 16px;
+        }
 
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
+        button[type="submit"]:hover {
+            background-color: #B99470;
+        }
 
-.user-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px; /* Add margin on top to separate from the search box */
-}
+        .user-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px; 
+        }
 
-.user-card {
-    background-color: #008081;
-    border-radius: 10px;
-    padding: 20px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .user-card {
+            background-color: #B99470;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.user-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
+        .user-card img {
+            width: 100px;
+            height: 130px;
+            margin-bottom: 10px;
+        }
 
-.user-card p {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
+        .user-card p {
+            font-size: 1em;
+            margin: 0 0;
+        }
 
-.user-card .edit-button,
-.user-card .delete-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+        .user-card .delete-button {
+            background-color: #DED0B6;
+            color: #000;
+            border:  2px solid;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block; 
+        }
 
-.user-card .edit-button:hover,
-.user-card .delete-button:hover {
-    background-color: #555;
-}
+        .user-card .delete-button:hover {
+            background-color: #B99470;
+        }
 
-.btn.btn-primary {
-    font-size: 14px; /* Mengatur ukuran font */
-    padding: 8px 16px; /* Mengatur padding tombol */
-    background-color: #008081; /* Warna latar belakang hijau tua */
-    border-color: #008081; /* Warna border sesuai dengan latar belakang */
-    margin-top: 20px;
-}
+        .btn{
+            background-color: #DED0B6;
+            color: #000;
+            border:  2px solid;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block; 
+        }
 
-.btn.btn-primary:hover {
-    background-color: #1B5E20; /* Warna latar belakang saat tombol dihover */
-    border-color: #1B5E20; /* Warna border saat tombol dihover */
-}
+        .btn:hover{
+            border: 2px solid;
+            background-color: #B99470;
+        }
     </style>
 </head>
 <body>
@@ -206,6 +217,12 @@ button[type="submit"]:hover {
                             <a href="product.html" class="nav-link">Product</a>
                         </li>
                         <li class="nav-item">
+                            <a href="StockIn.html" class="nav-link">Stock In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="StockOut.html" class="nav-link">Stock Out</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="Toko.html" class="nav-link">Toko</a>
                         </li>
                         <li class="nav-item">
@@ -215,11 +232,11 @@ button[type="submit"]:hover {
                     <div class="dropdown">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="avatar" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="../image/image-removebg-preview.png" alt="fullname" width="32" height="32" class="rounded-circle me-2">
+                            
                         </a>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="avatar">
                             <li><a class="dropdown-item" href="editprofil.html">My Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Change Password</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="../index.html">Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -239,26 +256,32 @@ button[type="submit"]:hover {
                 </form>
             </div>
             <div class="user-cards">
-                <div class="user-card">
+                <div class="user-card" data-user-id="1">
                     <img src="../image/01.png" alt="User Image">
-                    <p>Sapto Nugroho</p>
-
+                    <p>Nama : Sapto Nugroho</p>
+                    <p>No Hp : 1</p>
+                    <p>Alamat : </p>
                 </div>
-                <div class="user-card">
+                <div class="user-card" data-user-id="2">
                     <img src="../image/02.png" alt="User Image">
-                    <p>Sapto Nugroho</p>
-
+                    <p>Nama : Sapto Nugroho</p>
+                    <p>No Hp : 2</p>
+                    <p>Alamat : </p>
                 </div>
-                <div class="user-card">
+                <div class="user-card" data-user-id="3">
                     <img src="../image/03.png" alt="User Image">
-                    <p>Siti Nigrihi</p>
-
+                    <p>Nama : Siti Nigrihi</p>
+                    <p>No Hp : 3</p>
+                    <p>Alamat : </p>
                 </div>
-                <div class="user-card">
+                <div class="user-card" data-user-id="4">
                     <img src="../image/jhbj.png" alt="User Image">
-                    <p>Sapto Nugroho</p>
-
+                    <p>Nama : Sapto Nugroho</p>
+                    <p>No Hp : 4</p>
+                    <p>Alamat : </p>
                 </div>
+            </div>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

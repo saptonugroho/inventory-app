@@ -6,19 +6,20 @@
     <title>IBOB</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-0R7Z7HjF2+afJ+2XY7ofo0e9NBd9eVSK7PAE2QhDN4f3+4AaGm6r3ofhtVD2+3VbFf3hN9sg0n8ZGpUzq4Gy+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="icon" type="image/x-icon" href="../image/1-removebg-preview.png">
     <style>
         body {
             background-color: #FAEED1;
-            overflow: none;
+            overflow: hidden;
         }
 
         .content-container {
             display: flex;
             justify-content: left;
-            align-items: center; /* Center items vertically */
+            align-items: center; 
             gap: 20px;
-            height: calc(100vh - 80px); /* Adjust height to account for the navbar */
+            height: calc(100vh - 80px); 
         }
 
         .text-container {
@@ -157,6 +158,7 @@
         .user-card img {
             width: 100px;
             height: 100px;
+            border-radius: 50%;
             margin-bottom: 10px;
         }
 
@@ -164,7 +166,7 @@
             font-size: 1em;
             margin-bottom: 10px;
         }
-        .user-card .edit-button,
+
         .user-card .delete-button {
             background-color: #DED0B6;
             color: #000;
@@ -176,7 +178,7 @@
             border-radius: 5px;
             display: inline-block; 
         }
-        .user-card .edit-button:hover,
+
         .user-card .delete-button:hover {
             background-color: #B99470;
         }
@@ -252,7 +254,7 @@
     
     <main>
         <div class="container1">
-            <h1>Product</h1>
+            <h1>User</h1>
             <div class="search-container">
                 <form action="#">
                     <div class="search-box">
@@ -265,33 +267,29 @@
                 <div class="user-card" data-user-id="1">
                     <img src="../image/01.png" alt="User Image">
                     <p>Name: Sapto Nugroho</p>
-                    <p>Stock: 1</p>
-                    <a href="editproduct.html?user-id=1"><button class="edit-button">Edit</button></a>
+                    <p>ID: 1</p>
                     <button class="delete-button">Hapus</button>
                 </div>
                 <div class="user-card" data-user-id="2">
                     <img src="../image/02.png" alt="User Image">
                     <p>Name: Sapto Nugroho</p>
-                    <p>Stock: 2</p>
-                    <a href="editproduct.html?user-id=2"><button class="edit-button">Edit</button></a>
+                    <p>ID: 2</p>
                     <button class="delete-button">Hapus</button>
                 </div>
                 <div class="user-card" data-user-id="3">
                     <img src="../image/03.png" alt="User Image">
                     <p>Name: Siti Nigrihi</p>
-                    <p>Stock: 3</p>
-                    <a href="editproduct.html?user-id=3"><button class="edit-button">Edit</button></a>
+                    <p>ID: 3</p>
                     <button class="delete-button">Hapus</button>
                 </div>
                 <div class="user-card" data-user-id="4">
                     <img src="../image/jhbj.png" alt="User Image">
                     <p>Name: Sapto Nugroho</p>
-                    <p>Stock: 4</p>
-                    <a href="editproduct.html?user-id=4"><button class="edit-button">Edit</button></a>
+                    <p>ID: 4</p>
                     <button class="delete-button">Hapus</button>
                 </div>
             </div>
-            <a href="tambahproduk.html" class="btn">Tambah Product</a>
+            <a href="tambahuser.html" class="btn">Tambah User</a>
         </div>
     </main>
 

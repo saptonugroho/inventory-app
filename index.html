@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="image/1-removebg-preview.png">
     <style>
         body {
-            background-color: #8BD9CA;
+            background-color: #FAEED1;
             overflow: hidden;
         }
         .Home {
@@ -28,6 +28,19 @@
             flex-direction: column;
             justify-content: center;
         }
+        
+        .text-container h1 {
+            font-size: 70px;
+            margin-top: -15px; 
+            color: #B99470;
+        }
+        .text-container h2 {
+            margin-bottom: 0; 
+        }
+        .text-container h3 {
+            font-size: large;
+            margin-top: -15px;
+        }
         .image-container {
             flex: 1;
             display: flex;
@@ -38,20 +51,17 @@
             max-width: 100%;
             height: auto;
         }
-        .btn {
-            color: black;
-            margin-bottom: 10px;
-        }
         .navbar {
-            background-color: #008081;
+            background-color: #B99470;
             font-size: large;
             font-weight: 400;
-            padding: 0.5rem 1rem; /* Adjust padding to reduce height */
+            padding: 0.05rem 0.2rem; /* Adjust padding to reduce height */
         }
         .navbar .nav-item {
             padding-left: 1rem;
         }
         .navbar .nav-item a {
+            height: auto;
             color: black; /* Change text color to black */
             text-decoration: none; /* Remove underline */
         }
@@ -84,11 +94,11 @@
         }
         .navbar-brand h2 {
             color: black;
-            font-size: 1.5rem; /* Adjust font size as necessary */
+            font-size: 1.5rem; 
         }
         .navbar-brand img {
-            height: 70px; /* Adjust the height of the logo */
-            margin-right: 10px;
+            height: 70px; 
+            margin-right: 5px; /* Reduce the space between the logo and the text */
         }
     </style>
 </head>
@@ -106,9 +116,6 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="daftar.html" type="button">Daftar</a>
-                        </li>
-                        <li class="nav-item">
                             <a href="login.html" type="button">Login</a>
                         </li>
                     </ul>
@@ -121,11 +128,12 @@
         <div class="Home">
             <div class="container content-container">
                 <div class="text-container">
-                    <h1>Selamat Datang</h1>
-                    <p>Welcome to IBOB, your go-to library resource!</p>
-                    <div class="rak mt-4">
-                        <a href="./Admin/Admin.html" class="btn btn-primary mr-2">Transaksi</a>
-                    </div>
+                    <h2><b>Selamat Datang</b></h2>
+                    <h1><b>INVENTORY</b></h1>
+                    <h3><b>Penyimpanan,Penerimaan,dan Pengambilan</b></h3>
+                    <br>
+                    <p>Kami menyediakan platform yang memudahkan Anda untuk mengelola stok barang dengan efisien dan akurat. 
+                        Dapatkan kendali penuh atas persediaan Anda dan tingkatkan produktivitas bisnis dengan fitur-fitur canggih kami.</p>
                 </div>
                 <div class="image-container">
                     <img src="image/2.png" alt="Library Image">

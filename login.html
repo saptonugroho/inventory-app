@@ -8,33 +8,81 @@
     <link rel="icon" type="image/x-icon" href="image/1-removebg-preview.png">
     <style>
         body {
-            background-color: #8BD9CA;
+            background-color: #FAEED1;
             overflow: hidden;
         }
-        .header {
-            background-color: #008081;
+        .content-container {
+            display: flex;
+            justify-content: left;
+            align-items: center; 
+            gap: 20px;
+            height: calc(100vh - 80px); 
+        }
+
+        .text-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .navbar {
+            background-color: #B99470;
+            font-size: large;
+            font-weight: 400;
+            padding: 0.05rem 0.2rem; /* Adjust padding to reduce height */
+        }
+        .navbar .nav-item {
+            padding-left: 1rem;
+        }
+        .navbar .nav-item a {
+            height: auto;
+            color: black; /* Change text color to black */
+            text-decoration: none; /* Remove underline */
+        }
+        .navbar .nav-item a:hover {
+            color: black; /* Ensure text color remains black on hover */
+        }
+        .nav-item .active {
+            font-weight: 500;
+        }
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                width: 100%;
+                transition-timing-function: ease-out;
+            }
+            .nav-item .btn {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            #input-search {
+                width: 12em;
+            }
+            #banner img {
+                height: 200px;
+                width: min-content;
+            }
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand h2 {
+            color: black;
+            font-size: 1.5rem; 
+        }
+        .navbar-brand img {
+            height: 70px; 
+            margin-right: 5px; /* Reduce the space between the logo and the text */
+        }
+        .bottom-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 20px;
+            margin-right: 100px;
         }
-        .header .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .header img {
-            height: 70px;
-        }
-        .header h1 {
-            color: black;
-            margin: 0 0 0 10px; /* Add left margin to space out from logo */
-        }
-        .header a {
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
+
+        .bottom-section-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -44,9 +92,10 @@
         .illustration img {
             max-width: 100%;
             height: auto;
+            margin-left: 100px;
         }
         .form-container {
-            background-color: #469890;
+            background-color: #B99470;
             padding: 20px;
             border-radius: 10px;
             width: 300px;
@@ -65,77 +114,44 @@
         .form-container .btn-primary {
             width: 100%;
             padding: 10px;
-            background-color: #008081;
-            border: none;
+            background-color: #B99470;
+            border: 2px solid #171818; /* Added border */
             border-radius: 5px;
             color: black;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */
         }
         .form-container .btn-primary:hover {
-            background-color: #005f5f;
+            background-color: #DED0B6;
+            border-color: #000000; /* Darker border on hover */
         }
-        .form-container .social-login {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-        .form-container .social-login a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48%;
-            padding: 10px;
-            border-radius: 5px;
-            color: black;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .form-container .social-login img {
-            margin-right: 10px;
-            height: 16px; /* Adjust height as needed */
-        }
-        .form-container .social-login .facebook {
-            background-color: #3b5998;
-        }
-        .form-container .social-login .facebook:hover {
-            background-color: #2d4373;
-        }
-        .form-container .social-login .google {
-            background-color: #db4437;
-        }
-        .form-container .social-login .google:hover {
-            background-color: #a33d2e;
-        }
-        .form-container .login-link {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .form-container .login-link a {
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .form-container .login-link a:hover {
-            text-decoration: underline;
-        }
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-        }
+
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <a class="navbar-brand col-ms-3" href="index.html">
-                <img src="image/1-removebg-preview.png" width="80" height="80">
-                <h2>IBOB</h2>
-            </a>
-        </div>
-        <a href="#">Butuh bantuan?</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow">
+            <div class="container">
+                <a class="navbar-brand col-ms-3" href="./user/userpage.html">
+                    <img src="image/1-removebg-preview.png" alt="IBOB Logo">
+                    <h2>IBOB</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" type="button">Butuh bantuan?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <div class="container">
+
+    <div class="bottom-section">
         <div class="illustration">
             <img src="image/2.png" alt="Illustration">
         </div>
@@ -143,22 +159,10 @@
             <h2>Login</h2>
             <input type="email" placeholder="Email">
             <input type="password" placeholder="Katasandi">
-            <button class="btn btn-primary">Login</button>
-            <div class="text-center">Atau</div>
-            <div class="social-login">
-                <a href="#" class="facebook">
-                    <img src="image/facebook.png" alt="Facebook Logo"/>
-                    Facebook
-                </a>
-                <a href="#" class="google">
-                    <img src="image/google.png" alt="Google Logo"/>
-                    Google
-                </a>
-            </div>
-            <div class="login-link">
-                <span>Belum Punya akun? </span><a href="daftar.html">Daftar</a>
-            </div>
+            <a href="./user/userpage.html" class="btn btn-primary">Login</a>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

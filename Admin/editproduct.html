@@ -5,52 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IBOB</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-0R7Z7HjF2+afJ+2XY7ofo0e9NBd9eVSK7PAE2QhDN4f3+4AaGm6r3ofhtVD2+3VbFf3hN9sg0n8ZGpUzq4Gy+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="icon" type="image/x-icon" href="../image/1-removebg-preview.png">
     <style>
         body {
-            background-color: #8BD9CA;
+            background-color: #FAEED1;
             overflow: hidden;
         }
-        .header {
-            background-color: #008081;
+
+        .content-container {
+            display: flex;
+            justify-content: left;
+            align-items: center; 
+            gap: 20px;
+            height: calc(100vh - 80px); 
+        }
+
+        .text-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .navbar {
+            background-color: #B99470;
+            font-size: large;
+            font-weight: 400;
+            padding: 0.05rem 0.2rem; /* Adjust padding to reduce height */
+        }
+        .navbar .nav-item {
+            padding-left: 1rem;
+        }
+        .navbar .nav-item a {
+            height: auto;
+            color: black; /* Change text color to black */
+            text-decoration: none; /* Remove underline */
+        }
+        .navbar .nav-item a:hover {
+            color: black; /* Ensure text color remains black on hover */
+        }
+        .nav-item .active {
+            font-weight: 500;
+        }
+        .dropdown-toggle::after {
+            display: none; /* Hide default caret icon */
+            content: none; /* Ensure no content is added */
+        }
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand h2 {
+            color: black;
+            font-size: 1.5rem; /* Adjust font size as necessary */
+        }
+        .navbar-brand img {
+            height: 70px; /* Adjust the height of the logo */
+            margin-right: 5px;
+        }
+        .dropdown-item:hover {
+            background-color: #008081; /* Change hover background color */
+        }
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                width: 100%;
+                transition-timing-function: ease-out;
+            }
+            .nav-item .btn {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            #input-search {
+                width: 12em;
+            }
+            #banner img {
+                height: 200px;
+                width: min-content;
+            }
+        }
+
+        
+        .bottom-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 20px;
+            margin-right: 100px;
         }
-        .header .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .header img {
-            height: 70px;
-        }
-        .header h1 {
-            color: black;
-            margin: 0 0 0 10px; /* Add left margin to space out from logo */
-        }
-        .header a {
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
+
+        .bottom-section-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: calc(100vh - 60px); /* Adjust for header height */
             padding: 20px;
         }
+        .illustration h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            margin-left: 300px;
+        }
         .illustration img {
             max-width: 100%;
             height: auto;
+            margin-left: 100px;
         }
         .form-container {
-            background-color: #469890;
+            background-color: #B99470;
             padding: 20px;
             border-radius: 10px;
             width: 300px;
-            height: 400px;
         }
         .form-container h2 {
             text-align: center;
@@ -64,49 +134,86 @@
             border: 1px solid #ccc;
         }
         .form-container .btn-primary {
-            margin-top: 40px;
             width: 100%;
             padding: 10px;
-            background-color: #008081;
-            border: none;
+            background-color: #B99470;
+            border: 2px solid #171818; /* Added border */
             border-radius: 5px;
             color: black;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */
         }
         .form-container .btn-primary:hover {
-            background-color: #005f5f;
-        }
-        
-        
-        .navbar-brand {
-            display: flex;
-            align-items: center;
+            background-color: #DED0B6;
+            border-color: #000000; /* Darker border on hover */
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <a class="navbar-brand col-ms-3" href="index.html">
-                <img src="../image/1-removebg-preview.png" width="80" height="80">
-                <h2>IBOB</h2>
-            </a>
-        </div>
-        <a href="#">Butuh bantuan?</a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow">
+            <div class="container">
+                <a class="navbar-brand col-ms-3" href="#">
+                    <img src="../image/1-removebg-preview.png" alt="IBOB Logo">
+                    <h2>IBOB</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="user.html" class="nav-link">User</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="product.html" class="nav-link">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="StockIn.html" class="nav-link">Stock In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="StockOut.html" class="nav-link">Stock Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Toko.html" class="nav-link">Toko</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">Pemasok</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">Peleanggan</a>
+                        </li>
+                    </ul>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="avatar" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../image/image-removebg-preview.png" alt="fullname" width="32" height="32" class="rounded-circle me-2">
+                            
+                        </a>
+                        <ul class="dropdown-menu text-small shadow" aria-labelledby="avatar">
+                            <li><a class="dropdown-item" href="editprofil.html">My Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li><a class="dropdown-item" href="../index.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
-    <div class="container">
+    
+    <div class="bottom-section">
         <div class="illustration">
-            <img src="../image/2.png" alt="Illustration">
+            <h1>Edit Product</h1>
+            <img src="/image/2.png" alt="Illustration">
         </div>
         <div class="form-container">
             <h2>Edit Product</h2>
-            <input type="namabarang" placeholder="Nama Barang">
-            <input type="jenisbarang" placeholder="Jenis Barang">
-            <input type="pemasok" placeholder="Pemasok">
-            <a href="product.html" class="btn btn-primary">Edit</a>
-            
+            <input type="text" placeholder="Nama">
+            <input type="number" placeholder="Stock">
+            <a href="./Admin/Admin.html" class="btn btn-primary">Edit</a>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

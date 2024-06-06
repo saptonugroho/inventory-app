@@ -89,113 +89,40 @@
             }
         }
 
-        .container1 {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Jarak antara h1 dengan tabel */
+}
 
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+.table-container {
+    background-color: #B99470; /* Menambahkan latar belakang putih */
+    text-align: center; /* Pusatkan table di dalam div */
+    margin: 20px auto; /* Beri jarak atas dan bawah, serta auto untuk pusat secara horizontal */
+    width: 80%; /* Atur lebar sesuai kebutuhan */
+    border: 1px solid #ccc; /* Beri garis pinggir */
+    overflow: auto; /* Jika tabelnya lebih besar dari div, tambahkan scroll */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-        .search-container {
-            max-width: 400px;
-            width: 100%;
-            margin: 20px auto; 
-            padding: 15px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
             background-color: #B99470;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-box {
-            display: flex;
-            align-items: center;
-        }
-
-        input[type="text"] {
-            width: calc(100% - 40px); 
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px 0 0 4px;
-            font-size: 16px;
-        }
-
-        button[type="submit"] {
-            background-color: #B99470;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 0 4px 4px 0;
-            font-size: 16px;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #B99470;
-        }
-
-        .user-cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px; 
-        }
-
-        .user-card {
-            background-color: #B99470;
-            border-radius: 10px;
-            padding: 20px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .user-card img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 10px;
-        }
-
-        .user-card p {
-            font-size: 1em;
-            margin-bottom: 10px;
-        }
-        .user-card .edit-button,
-        .user-card .delete-button {
-            background-color: #DED0B6;
             color: #000;
-            border:  2px solid;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 5px;
-            display: inline-block; 
         }
-        .user-card .edit-button:hover,
-        .user-card .delete-button:hover {
-            background-color: #B99470;
-        }
-
-        .btn{
-            background-color: #DED0B6;
-            color: #000;
-            border:  2px solid;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 10px 20px;
-            margin: 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            display: inline-block; 
-        }
-
-        .btn:hover{
-            border: 2px solid;
-            background-color: #B99470;
+        td {
+        background-color: #FAEED1;
         }
     </style>
 </head>
@@ -213,9 +140,6 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="user.html" class="nav-link">User</a>
-                        </li>
-                        <li class="nav-item">
                             <a href="product.html" class="nav-link">Product</a>
                         </li>
                         <li class="nav-item">
@@ -230,9 +154,6 @@
                         <li class="nav-item">
                             <a href="Pemasok.html" class="nav-link">Pemasok</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pelanggan.html" class="nav-link">Peleanggan</a>
-                        </li>
                     </ul>
                     <div class="dropdown">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="avatar" data-bs-toggle="dropdown" aria-expanded="false">
@@ -240,8 +161,6 @@
                             
                         </a>
                         <ul class="dropdown-menu text-small shadow" aria-labelledby="avatar">
-                            <li><a class="dropdown-item" href="editprofil.html">My Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Change Password</a></li>
                             <li><a class="dropdown-item" href="../index.html">Logout</a></li>
                         </ul>
                     </div>
@@ -251,48 +170,51 @@
     </header>
     
     <main>
-        <div class="container1">
-            <h1>Product</h1>
-            <div class="search-container">
-                <form action="#">
-                    <div class="search-box">
-                        <input type="text" placeholder="cari nama user..." name="search">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-            </div>
-            <div class="user-cards">
-                <div class="user-card" data-user-id="1">
-                    <img src="../image/01.png" alt="User Image">
-                    <p>Name: Sapto Nugroho</p>
-                    <p>Stock: 1</p>
-                    <a href="editproduct.html?user-id=1"><button class="edit-button">Edit</button></a>
-                    <button class="delete-button">Hapus</button>
-                </div>
-                <div class="user-card" data-user-id="2">
-                    <img src="../image/02.png" alt="User Image">
-                    <p>Name: Sapto Nugroho</p>
-                    <p>Stock: 2</p>
-                    <a href="editproduct.html?user-id=2"><button class="edit-button">Edit</button></a>
-                    <button class="delete-button">Hapus</button>
-                </div>
-                <div class="user-card" data-user-id="3">
-                    <img src="../image/03.png" alt="User Image">
-                    <p>Name: Siti Nigrihi</p>
-                    <p>Stock: 3</p>
-                    <a href="editproduct.html?user-id=3"><button class="edit-button">Edit</button></a>
-                    <button class="delete-button">Hapus</button>
-                </div>
-                <div class="user-card" data-user-id="4">
-                    <img src="../image/jhbj.png" alt="User Image">
-                    <p>Name: Sapto Nugroho</p>
-                    <p>Stock: 4</p>
-                    <a href="editproduct.html?user-id=4"><button class="edit-button">Edit</button></a>
-                    <button class="delete-button">Hapus</button>
-                </div>
-            </div>
-            <a href="tambahproduk.html" class="btn">Tambah Product</a>
-        </div>
+       <h1>Stock Out</h1>
+       <div class="table-container">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah Barang</th>
+                    <th>Nama Pemasok</th>
+                    <th>Nama Toko</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Cola Coco</td>
+                    <td>100</td>
+                    <td>Sapto Akbar</td>
+                    <td>Sapto Store</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Cola Coco</td>
+                    <td>100</td>
+                    <td>Sapto Akbar</td>
+                    <td>Sapto Store</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Cola Coco</td>
+                    <td>100</td>
+                    <td>Sapto Akbar</td>
+                    <td>Sapto Store</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Cola Coco</td>
+                    <td>100</td>
+                    <td>Sapto Akbar</td>
+                    <td>Sapto Store</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
